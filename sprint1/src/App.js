@@ -1,25 +1,23 @@
-import React, { useState } from 'react'
-// import './Components/ImageVerify.css'
+import { useState } from 'react'
+import './Components/ImageVerify.css'
 // import { useImage } from 'react-image'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.scss'
 
 
-//settomg up the grid
+//function to set up grid
 function Grid() {
     const square = {
         border: '1px solid black'
     }
 
     return (
-        //inline style/css to make the grid columns, rows, and cell sizes
+        //adding inline style/css to make the grid columns, rows, and cell sizes
         <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 84px)',
             gridTemplateRows: 'repeat(3, 84px)'
         }}>
 
-            {/* there are different ways to add css styling in react */}
+            {/* there are different ways to add css in react */}
             <div style={square}>1</div>
             <div style={square}>2</div>
             <div style={square}>3</div>
