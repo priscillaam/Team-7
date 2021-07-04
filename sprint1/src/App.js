@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './Components/ImageVerify.css'
 // import { useImage } from 'react-image'
-
+import 'bootstrap/dist/css/bootstrap.css'
+import { Container, Button, Form, FormGroup } from 'react-bootstrap'
 
 //function to set up grid
 function Grid() {
@@ -85,14 +86,25 @@ function App() {
                 <h1>React Pop up</h1>
                 <br></br>
 
-                <form>
-                    Username: <input id="username" name="Username"></input> <br></br>
-                    <br></br>
-                    Password  : <input id="password" name="Password"></input>
-                </form>
+                <Form>
+                    <FormGroup controlId='formUsername'>
+
+                        <Form.Label>Username</Form.Label>{' '}
+                        <Form.Control id='username' type='text' placeholder='Username' ></Form.Control>
+                    </FormGroup>
+                    <br />
+                    <FormGroup controlId='formPassword'>
+                        <Form.Label>Password</Form.Label>{' '}
+                        <Form.Control type='password' placeholder='Password' ></Form.Control>
+
+                        <Form.Text>Feel safe logging in using our secure forms.</Form.Text>
+                    </FormGroup>
+                </Form>
                 <br></br>
-                <button onClick={() => setButtonPopup(true)} > Login</button>
+                <Button variant='secondary' type='submit' onClick={() => setButtonPopup(true)} > Login</Button>
+
             </main>
+
             <ImageVerify trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <h3>Pop Up Message</h3>
             </ImageVerify>
