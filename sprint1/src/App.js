@@ -3,12 +3,27 @@ import './Components/ImageVerify.css'
 // import { useImage } from 'react-image'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Button, Form, FormGroup } from 'react-bootstrap'
+import test1 from './Images/test1.JPG'
+
+function AssignImages() {
+    const imgs = {
+        width: '84px',
+        height: '84px'
+    }
+    
+    //function I was creating to add images onto the grid
+
+    return (
+
+        <img style={imgs} className="imgs" src={test1} alt="logo" />
+
+    )
+}
 
 //function to set up grid
 function Grid() {
-
     const square = {
-        border: '1px solid black'
+        border: '1px solid white'
     }
 
     return (
@@ -20,16 +35,38 @@ function Grid() {
         }}>
 
             {/* there are different ways to add css in react */}
-            <div style={square}>1</div>
-            <div style={square}>2</div>
-            <div style={square}>3</div>
-            <div style={square}>4</div>
-            <div style={square}>5</div>
-            <div style={square}>6</div>
-            <div style={square}>7</div>
-            <div style={square}>8</div>
-            <div style={square}>9</div>
-        </div >
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+            <div style={square}>
+                <AssignImages />
+            </div>
+
+
+        </div>
+
+
     )
 }
 
@@ -55,9 +92,7 @@ function ImageVerify(props) {
         backgroundColor: '#FFF',
         top: '16px',
         right: '16px'
-
     }
-
 
     return (props.trigger) ? (
         <div style={popup}>
@@ -72,7 +107,6 @@ function ImageVerify(props) {
                     <Grid />
                 </div>
 
-
             </div>
         </div>
     ) : ""; //if props.trigger == true -> open "popup" div, else -> ""
@@ -84,7 +118,7 @@ function App() {
     return (
         <div className="App">
             <main>
-                <h1>React Pop up</h1>
+                <h1>Sign In</h1>
                 <br></br>
 
                 <Form>
