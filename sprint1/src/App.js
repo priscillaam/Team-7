@@ -2,10 +2,11 @@ import { useState } from 'react'
 import './Components/ImageVerify.css'
 // import { useImage } from 'react-image'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Container, Button, Form, FormGroup } from 'react-bootstrap'
+import { Button, Form, FormGroup } from 'react-bootstrap'
 
 //function to set up grid
 function Grid() {
+
     const square = {
         border: '1px solid black'
     }
