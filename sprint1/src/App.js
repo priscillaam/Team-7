@@ -5,17 +5,85 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Button, Form, FormGroup } from 'react-bootstrap'
 import test1 from './Images/test1.JPG'
 
+//This is a simple placeholder for the image randomizer we'll add. We'll delete this later, I just needed a visual outline to reflect on.
+/*function ImgList() {
+    var images = [
+        {keyword : "Cat",
+         imglist : {
+            img1 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJVYJ3rT9KVeyvWltTFmfpv8C0CkhlQIQ4A&usqp=CAU"],
+            img2 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zpMzK7G6HwXUPNRU-BA03jx_1oC4Gl0NUg&usqp=CAU"],
+            img3 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5woNyRoVaXNN_8rTxh9bmEGa0QxUCHqVsmg&usqp=CAU"]  
+         }
+        },
+
+        {keyword :"Pizza",
+         imglist : {
+            img4 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz-eJmvQnM5YyC8UwvvIr56hMyQr0Wa6vppA&usqp=CAU"],
+            img5 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyuIjca1eL6dRRtFlrrV-4JSOZzDVEzuqK7g&usqp=CAU"],
+            img6 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfs32OMWj9HaCk9mrdlbvYTWt0yCKWGP4EnQ&usqp=CAU"]
+         }
+        },
+
+        {keyword :"Car",
+         imglist : {
+            img7 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQci4ViVbKJW1HbRq0H9BlZEYdTqSUcFeSkQA&usqp=CAU"],
+            img8 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBSI6p-YvPu4Sy_J-h_WfqcHudtYMr_pGoQ&usqp=CAU"],
+            img9 : ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU"]
+         }
+        }
+    ];
+
+    return(
+        Math.round(Math.random() * 10);
+
+        for (var i = 0, imagesLength = images.length; i < imagesLength; i++) {
+            for (var j = 0, imglistLength = images[i].imglist.length; j < imglistLength; j++) {
+            // do something with each list of each image keyword (i.e, for each cat picture do something)
+            }
+        }
+
+    )
+}*/
+
 function AssignImages() {
     const imgs = {
         width: '84px',
         height: '84px'
     }
-    
+
+    const keywords = ["Cat", "Pizza", "Car"];
+
+    var images = [
+        {keyword  : "Cat",
+         imglist  : [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJVYJ3rT9KVeyvWltTFmfpv8C0CkhlQIQ4A&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zpMzK7G6HwXUPNRU-BA03jx_1oC4Gl0NUg&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5woNyRoVaXNN_8rTxh9bmEGa0QxUCHqVsmg&usqp=CAU"  
+         ]
+        },
+
+        {keyword  : "Pizza",
+         imglist  : [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz-eJmvQnM5YyC8UwvvIr56hMyQr0Wa6vppA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyuIjca1eL6dRRtFlrrV-4JSOZzDVEzuqK7g&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfs32OMWj9HaCk9mrdlbvYTWt0yCKWGP4EnQ&usqp=CAU" 
+         ]
+        },
+
+        {keyword  : "Car",
+         imglist  : [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQci4ViVbKJW1HbRq0H9BlZEYdTqSUcFeSkQA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBSI6p-YvPu4Sy_J-h_WfqcHudtYMr_pGoQ&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU"
+         ]
+        }
+    ];
+
     //function I was creating to add images onto the grid
 
     return (
 
-        <img style={imgs} className="imgs" src={test1} alt="logo" />
+        <img style={imgs} className="imgs" src={images[0].imglist[0]} alt="logo" />
 
     )
 }
@@ -115,6 +183,7 @@ function ImageVerify(props) {
 
 function App() {
     const [buttonPopup, setButtonPopup] = useState(false);
+    
     return (
         <div className="App">
             <main>
