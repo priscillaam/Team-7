@@ -3,7 +3,7 @@ import './Components/ImageVerify.css'
 // import { useImage } from 'react-image'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Button, Form, FormGroup } from 'react-bootstrap'
-import test1 from './Images/test1.JPG'
+
 
 //This is a simple placeholder for the image randomizer we'll add. We'll delete this later, I just needed a visual outline to reflect on.
 /*function ImgList() {
