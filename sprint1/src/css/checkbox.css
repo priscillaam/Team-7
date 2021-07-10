@@ -1,0 +1,22 @@
+input.checkIMG {
+  position: absolute;
+}
+/* input[type="checkbox"][id^="myCheckbox"] {
+  display: none;
+}
+div.checkboxD {
+  cursor: pointer;
+}
+div.checkboxD:before {
+  background-color: white;
+  height: 84px;
+  width: 84px;
+}
+:checked + div.checkboxD {
+  border-color: black;
+}
+:checked + div.checkboxD:before {
+  content: "✓";
+  transform: scale(1);
+  background-color: white;
+} */
