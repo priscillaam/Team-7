@@ -10,4 +10,5 @@ class ChosenKey extends React.Component {
         )
     }
 }
+
 export default ChosenKey

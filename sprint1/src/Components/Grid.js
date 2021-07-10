@@ -4,20 +4,30 @@ import AssignImages from './AssignImages.js'
 import ImgList from './ImgList.js'
 import ChosenKey from './ChosenKey.jsx'
 
+
 //function to set up grid
 function Grid() {
     const [checked, setChecked] = useState(false)
-  
+    const state = {
+      Checknames: {
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: false,
+        9: false
+      }
+    }
+    const checkclick = (e) => {
+      var {name, checked} = e.target
+      setChecked(!checked)
+    }
+
     const square = {
       border: "1px solid white",
-    }
-  
-    //when div is clicked it changes the state to checked if its not checked
-    const handleChange = () => {
-      setChecked(!checked)
-      if (checked) {
-        setChecked(false)
-      }
     }
   
     return (
@@ -29,101 +39,101 @@ function Grid() {
           gridTemplateRows: "repeat(3, 84px)",
         }}
       >
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  onClick={checkclick} style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="1"
+             onChange={checkclick}
+            // checked={checked}
+            name="1"
             className="checkIMG"
             id="myCheckbox1"
           />
   
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD" /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="2"
+             onChange={checkclick}
+            // checked={checked}
+            name="2"
             className="checkIMG"
             id="myCheckbox2"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="3"
+             onChange={checkclick}
+            // checked={checked}
+            name="3"
             className="checkIMG"
             id="myCheckbox3"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="4"
+             onChange={checkclick}
+            // checked={checked}
+            name="4"
             className="checkIMG"
             id="myCheckbox4"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="5"
+             onChange={checkclick}
+            // checked={checked}
+            name="5"
             className="checkIMG"
             id="myCheckbox5"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="6"
+             onChange={checkclick}
+            // checked={checked}
+            name="6"
             className="checkIMG"
             id="myCheckbox6"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="7"
+             onChange={checkclick}
+            // checked={checked}
+            name="7"
             className="checkIMG"
             id="myCheckbox7"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="8"
+             onChange={checkclick}
+            // checked={checked}
+            name="8"
             className="checkIMG"
             id="myCheckbox8"
           />
           <AssignImages />
         </div>
-        <div className="checkboxD" onClick={handleChange} style={square}>
+        <div className="checkboxD"  /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            onChange={handleChange}
-            checked={checked}
-            value="9"
+             onChange={checkclick}
+            // checked={checked}
+            name="9"
             className="checkIMG"
             id="myCheckbox9"
           />
