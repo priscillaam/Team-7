@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { useImage } from "react-image"
 import AssignImages from './AssignImages.js'
+import ImgList from './ImgList.js'
+import ChosenKey from './ChosenKey.jsx'
 
 //function to set up grid
 function Grid() {

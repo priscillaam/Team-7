@@ -5,6 +5,7 @@ import ImageVerify from './Components/ImageVerify.js'
 import "./css/checkbox.css"
 import "bootstrap/dist/css/bootstrap.css"
 import { Button, Form, FormGroup } from "react-bootstrap"
+import ChosenKey from "./Components/ChosenKey"
 
 
 function App() {
@@ -44,7 +45,8 @@ function App() {
       </main>
 
       <ImageVerify trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <h3>Pop Up Message</h3>
+        <h3>Select all Images with</h3>
+        <ChosenKey />
       </ImageVerify>
     </div>
   )

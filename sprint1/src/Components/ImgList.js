@@ -1,5 +1,6 @@
 import React from "react" 
 
+
 var usedImg = ["", "" , "" , "", "", "", "", "", ""];
 var index = 1;
 
