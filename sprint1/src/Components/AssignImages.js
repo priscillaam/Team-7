@@ -5,8 +5,8 @@ function AssignImages(images) {
   const keywords = ["Cat", "Pizza", "Car"];
   
   const imgs = {
-    width: "84px",
-    height: "84px",
+    width: "120px",
+    height: "120px",
   }
 
   //function I was creating to add images onto the grid

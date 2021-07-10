@@ -10,8 +10,8 @@ function ImageVerify(props) {
     top: "0",
     left: "0",
     width: "100%",
-    height: "100vh",
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
+    height: "100%",
+    backgroundColor: "grey",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -20,9 +20,9 @@ function ImageVerify(props) {
   const popupInner = {
     position: "relative",
     padding: "32px",
-    width: "100%",
-    maxWidth: "600px",
-    backgroundColor: "#FFF",
+    width: '400px',
+    hieght: '800px',
+    backgroundColor: "white",
     top: "16px",
     right: "16px",
   }

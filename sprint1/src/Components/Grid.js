@@ -27,7 +27,7 @@ function Grid() {
     }
 
     const square = {
-      border: "1px solid white",
+      border: "6px solid white",
     }
   
     return (
@@ -35,11 +35,11 @@ function Grid() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 84px)",
-          gridTemplateRows: "repeat(3, 84px)",
+          gridTemplateColumns: "repeat(3, 125px)",
+          gridTemplateRows: "repeat(3, 125px)",
         }}
       >
-        <div className="checkboxD"  onClick={checkclick} style={square}>
+        <div className="checkboxD" /*onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -51,7 +51,7 @@ function Grid() {
   
           <AssignImages />
         </div>
-        <div className="checkboxD" /* onClick={}*/ style={square}>
+        <div className="checkboxD" /*onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
