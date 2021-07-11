@@ -45,8 +45,6 @@ function App() {
       </main>
 
       <ImageVerify trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <h3>Select all Images with</h3>
-        <ChosenKey />
       </ImageVerify>
     </div>
   )

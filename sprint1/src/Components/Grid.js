@@ -27,7 +27,7 @@ function Grid() {
     }
 
     const square = {
-      border: "6px solid white",
+      justifyContent: 'center'
     }
   
     return (
@@ -37,9 +37,11 @@ function Grid() {
           display: "grid",
           gridTemplateColumns: "repeat(3, 125px)",
           gridTemplateRows: "repeat(3, 125px)",
+          justifyContent: 'center',
+          paddingTop: '5px'
         }}
       >
-        <div className="checkboxD" /*onClick={}*/ style={square}>
+        <div /*onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -51,7 +53,7 @@ function Grid() {
   
           <AssignImages />
         </div>
-        <div className="checkboxD" /*onClick={}*/ style={square}>
+        <div   /*onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -62,7 +64,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -73,7 +75,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -84,7 +86,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -95,7 +97,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -106,7 +108,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -117,7 +119,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
@@ -128,7 +130,7 @@ function Grid() {
           />
           <AssignImages />
         </div>
-        <div className="checkboxD"  /* onClick={}*/ style={square}>
+        <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
              onChange={checkclick}
