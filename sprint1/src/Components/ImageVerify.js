@@ -56,9 +56,12 @@ function ImageVerify(props) {
     padding: '25px'
   }
   return props.trigger ? (
-    <div style={popup} onClick={() => props.setTrigger(false)}>
+    <div style={popup}>
       <div style={popupInner}>
-        <div style={ header }>
+        <button onClick={() => props.setTrigger(false)} style={{ float: 'right' }}>
+          x
+        </button>
+        <div style={header}>
           <h3>Select all Images with</h3>
           <ChosenKey />
         </div>
