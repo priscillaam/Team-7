@@ -21,13 +21,13 @@ function Grid() {
         9: false
       }
     }
-    const checkclick = (e) => {
-      var {name, checked} = e.target
-      setChecked(!checked)
-      if(checked){
-        console.log(name + " is checked!")
-      }
-    }
+    // const checkclick = (e) => {
+    //   var {name, checked} = e.target
+    //   setChecked(!checked)
+    //   if(checked){
+    //     console.log(name + " is checked!")
+    //   }
+    // }
 
     const square = {
       justifyContent: 'center'
@@ -47,7 +47,7 @@ function Grid() {
         <div /*onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="1"
             className="checkIMG"
@@ -58,7 +58,7 @@ function Grid() {
         <div   /*onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="2"
             className="checkIMG"
@@ -69,7 +69,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="3"
             className="checkIMG"
@@ -80,7 +80,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="4"
             className="checkIMG"
@@ -91,7 +91,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="5"
             className="checkIMG"
@@ -102,7 +102,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="6"
             className="checkIMG"
@@ -113,7 +113,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="7"
             className="checkIMG"
@@ -124,7 +124,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="8"
             className="checkIMG"
@@ -135,7 +135,7 @@ function Grid() {
         <div    /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-             onChange={checkclick}
+            //  onChange={checkclick}
             // checked={checked}
             name="9"
             className="checkIMG"
