@@ -24,6 +24,9 @@ function Grid() {
     const checkclick = (e) => {
       var {name, checked} = e.target
       setChecked(!checked)
+      if(checked){
+        console.log(name + " is checked!")
+      }
     }
 
     const square = {
@@ -50,7 +53,6 @@ function Grid() {
             className="checkIMG"
             id="myCheckbox1"
           />
-  
           <AssignImages />
         </div>
         <div   /*onClick={}*/ style={square}>
