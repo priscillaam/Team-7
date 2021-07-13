@@ -1,12 +1,10 @@
 import { useState } from "react"
 import "./Components/ImageVerify.css"
-import ImageVerify from './Components/ImageVerify.js'
+import ImageVerify from "./Components/ImageVerify.js"
 // import { useImage } from 'react-image'
 import "./css/checkbox.css"
 import "bootstrap/dist/css/bootstrap.css"
 import { Button, Form, FormGroup } from "react-bootstrap"
-import ChosenKey from "./Components/ChosenKey"
-
 
 function App() {
   const [buttonPopup, setButtonPopup] = useState(false)
@@ -44,8 +42,10 @@ function App() {
         </Button>
       </main>
 
-      <ImageVerify trigger={buttonPopup} setTrigger={setButtonPopup}>
-      </ImageVerify>
+      <ImageVerify
+        trigger={buttonPopup}
+        setTrigger={setButtonPopup}
+      ></ImageVerify>
     </div>
   )
 }
