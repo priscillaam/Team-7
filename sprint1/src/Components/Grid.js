@@ -26,7 +26,7 @@ export class Grid extends React.Component {
         console.log(name + " is deselected!")
       }
     }
-
+      /*
     var images = [
       {
         keyword: "Cat",
@@ -54,7 +54,50 @@ export class Grid extends React.Component {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU",
         ],
       },
-    ]
+      ]
+      */
+
+      var images = [
+          {
+              keyword: "Cat",
+              selectedKeyword: false, //this lets you know if "Cat" is the keyword that was chosen.
+              imglist: [
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJVYJ3rT9KVeyvWltTFmfpv8C0CkhlQIQ4A&usqp=CAU",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zpMzK7G6HwXUPNRU-BA03jx_1oC4Gl0NUg&usqp=CAU",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5woNyRoVaXNN_8rTxh9bmEGa0QxUCHqVsmg&usqp=CAU"
+              ],
+              selected: [
+                  false, false, false
+              ] //to keep track of images that are already being displayed
+          },
+
+          {
+              keyword: "Pizza",
+              selectedKeyword: false,
+              imglist: [
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz-eJmvQnM5YyC8UwvvIr56hMyQr0Wa6vppA&usqp=CAU",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyuIjca1eL6dRRtFlrrV-4JSOZzDVEzuqK7g&usqp=CAU",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfs32OMWj9HaCk9mrdlbvYTWt0yCKWGP4EnQ&usqp=CAU"
+              ],
+              selected: [
+                  false, false, false
+              ]
+          },
+
+          {
+              keyword: "Car",
+              selectedKeyword: false,
+              imglist: [
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQci4ViVbKJW1HbRq0H9BlZEYdTqSUcFeSkQA&usqp=CAU",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBSI6p-YvPu4Sy_J-h_WfqcHudtYMr_pGoQ&usqp=CAU",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU"
+              ],
+              selected: [
+                  false, false, false
+              ]
+          }
+      ];
+      /*
     function randkeyNum() {
       var keyNum = Math.floor(Math.random() * 3)
       return keyNum
@@ -64,7 +107,18 @@ export class Grid extends React.Component {
       var imgNum = Math.floor(Math.random() * 3)
       return imgNum
     }
+    */
+      function randomImg() {
+          var keyNum = Math.floor(Math.random() * 3)
+          var imgNum = Math.floor(Math.random() * 3)
 
+          if (images[keyNum].selected[imgNum] == false) {
+              images[keyNum].selected[imgNum] = true
+              return images[keyNum].imglist[imgNum]
+          }
+              
+          return randomImg()
+      }
     return (
       //adding inline style/css to make the grid columns, rows, and cell sizes
 
@@ -90,7 +144,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -106,7 +160,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -122,7 +176,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -138,7 +192,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -154,7 +208,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -170,7 +224,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -186,7 +240,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -202,7 +256,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
@@ -218,7 +272,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-            src={images[randkeyNum()].imglist[randimgNum()]}
+                    src={randomImg()}
             alt="logo"
           />
         </div>
