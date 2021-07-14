@@ -2,30 +2,32 @@ import React from "react"
 
 //function to set up grid
 export class Grid extends React.Component {
-  render() {
-    const square = {
-      justifyContent: "center",
-    }
-    const imgs = {
-      border: "3px solid white",
-      width: "125px",
-      height: "125px",
-    }
+    render() {
+        var chosenKey = this.props.randKey
+        const square = {
+            justifyContent: "center",
+        }
+        const imgs = {
+            border: "3px solid white",
+            width: "125px",
+            height: "125px",
+        }
 
-    //this will take randKey from ImageVerify and print it out in the console
-    console.log(this.props.randKey)
+        //this will take randKey from ImageVerify and print it out in the console
+        console.log(this.props.randKey)
 
-    // these are to test when clicked do something when unclicked do something
-    const checkclick = (e) => {
-      var { name, checked } = e.target
-      //  only applies to the first top left checkbox: when checked output 'is selected', when unchecked output 'is deselected'
-      if (checked) {
-        console.log(images.keyword === 0)
-        console.log(name + " is selected")
-      } else {
-        console.log(name + " is deselected!")
-      }
-    }
+        
+        // these are to test when clicked do something when unclicked do something
+        const checkclick = (e) => {
+            var { name, checked } = e.target
+            //  only applies to the first top left checkbox: when checked output 'is selected', when unchecked output 'is deselected'
+            if (checked) {
+                console.log(images.keyword === 0)
+                console.log(name + " is selected")
+            } else {
+                console.log(name + " is deselected!")
+            }
+        }
       /*
     var images = [
       {
@@ -57,69 +59,119 @@ export class Grid extends React.Component {
       ]
       */
 
-      var images = [
-          {
-              keyword: "Cat",
-              selectedKeyword: false, //this lets you know if "Cat" is the keyword that was chosen.
-              imglist: [
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJVYJ3rT9KVeyvWltTFmfpv8C0CkhlQIQ4A&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zpMzK7G6HwXUPNRU-BA03jx_1oC4Gl0NUg&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5woNyRoVaXNN_8rTxh9bmEGa0QxUCHqVsmg&usqp=CAU"
-              ],
-              selected: [
-                  false, false, false
-              ] //to keep track of images that are already being displayed
-          },
+        var images = [
+            {
+                keyword: "Cat",
+                selectedKeyword: false, //this lets you know if "Cat" is the keyword that was chosen.
+                imglist: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJVYJ3rT9KVeyvWltTFmfpv8C0CkhlQIQ4A&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zpMzK7G6HwXUPNRU-BA03jx_1oC4Gl0NUg&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5woNyRoVaXNN_8rTxh9bmEGa0QxUCHqVsmg&usqp=CAU",
+                    "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg"
+                ],
+                selected: [
+                    false, false, false, false
+                ] //to keep track of images that are already being displayed
+            },
 
-          {
-              keyword: "Pizza",
-              selectedKeyword: false,
-              imglist: [
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz-eJmvQnM5YyC8UwvvIr56hMyQr0Wa6vppA&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyuIjca1eL6dRRtFlrrV-4JSOZzDVEzuqK7g&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfs32OMWj9HaCk9mrdlbvYTWt0yCKWGP4EnQ&usqp=CAU"
-              ],
-              selected: [
-                  false, false, false
-              ]
-          },
+            {
+                keyword: "Pizza",
+                selectedKeyword: false,
+                imglist: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz-eJmvQnM5YyC8UwvvIr56hMyQr0Wa6vppA&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyuIjca1eL6dRRtFlrrV-4JSOZzDVEzuqK7g&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfs32OMWj9HaCk9mrdlbvYTWt0yCKWGP4EnQ&usqp=CAU",
+                    "https://www.seriouseats.com/thmb/rSZmxUFduLpyx9ZcgY4TnHUr42k=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__10__20181015-state-of-slice-delmar-clay-williams-2de043fa5a0d4475b6c567e4a974b13b.jpg"
+                ],
+                selected: [
+                    false, false, false, false
+                ]
+            },
 
-          {
-              keyword: "Car",
-              selectedKeyword: false,
-              imglist: [
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQci4ViVbKJW1HbRq0H9BlZEYdTqSUcFeSkQA&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBSI6p-YvPu4Sy_J-h_WfqcHudtYMr_pGoQ&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU"
-              ],
-              selected: [
-                  false, false, false
-              ]
-          }
-      ];
-      /*
-    function randkeyNum() {
-      var keyNum = Math.floor(Math.random() * 3)
-      return keyNum
-    }
+            {
+                keyword: "Car",
+                selectedKeyword: false,
+                imglist: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQci4ViVbKJW1HbRq0H9BlZEYdTqSUcFeSkQA&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBSI6p-YvPu4Sy_J-h_WfqcHudtYMr_pGoQ&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-79CazJxt2J7hMpYAcj83_m-OIl9Oa5UCQ&usqp=CAU"
+                ],
+                selected: [
+                    false, false, false,false
+                ]
+            }
+        ];
+            /*
+        function randkeyNum() {
+            var keyNum = Math.floor(Math.random() * 3)
+            return keyNum
+        }
 
-    function randimgNum() {
-      var imgNum = Math.floor(Math.random() * 3)
-      return imgNum
-    }
-    */
-      function randomImg() {
-          var keyNum = Math.floor(Math.random() * 3)
-          var imgNum = Math.floor(Math.random() * 3)
+        function randimgNum() {
+            var imgNum = Math.floor(Math.random() * 3)
+            return imgNum
+        }
+        */
+        var keyHasBeenChosen = false
+        var primeKey //Array number of the chosen key
+        var totalChosen = 0 //number of images from chosen key that have already been returned/selected
+        function randomImg() {
+            if (keyHasBeenChosen === false) {
+                for (let i = 0; i < images.length; i++) {
+                    if (chosenKey === images[i].keyword) {
+                        images[i].selectedKeyword = true
+                        primeKey = i
+                        keyHasBeenChosen = true;
+                        console.log("keyHasBeenChosen = " + images[i].keyword)
+                    }
+                }
+            }
+            var keyOrNot = Math.floor(Math.random() * 2) //will the next image be a chosen key or not a chosen key
+            if (keyOrNot == 0) {
+                if (totalChosen < 3) {
+                    var imgNum = Math.floor(Math.random() * images[primeKey].imglist.length)
+                    if (images[primeKey].selected[imgNum] === false) {
+                        totalChosen++
+                        console.log("totalChosen = " + totalChosen)
+                        images[primeKey].selected[imgNum] = true
+                        return images[primeKey].imglist[imgNum]
+                    }
+                }
+                else {
+                    var keyNum = Math.floor(Math.random() * images.length)
+                    if (keyNum === primeKey) {
+                        while (keyNum === primeKey) {
+                            keyNum = Math.floor(Math.random() * images.length)
+                        }
+                    }
+                    var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
 
-          if (images[keyNum].selected[imgNum] == false) {
-              images[keyNum].selected[imgNum] = true
-              return images[keyNum].imglist[imgNum]
-          }
-              
-          return randomImg()
-      }
-    return (
+                    if (images[keyNum].selected[imgNum] === false) {
+                        images[keyNum].selected[imgNum] = true
+                        return images[keyNum].imglist[imgNum]
+                    }
+                }
+            }
+            else {
+                var keyNum = Math.floor(Math.random() * images.length)
+                if (keyNum === primeKey) {
+                    while (keyNum === primeKey) {
+                        keyNum = Math.floor(Math.random() * images.length)
+                    }
+                }
+                var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
+
+                if (images[keyNum].selected[imgNum] === false) {
+                    images[keyNum].selected[imgNum] = true
+                    return images[keyNum].imglist[imgNum]
+                }
+            }
+
+            return randomImg()
+        }
+        return (
+
       //adding inline style/css to make the grid columns, rows, and cell sizes
 
       <div
