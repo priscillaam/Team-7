@@ -28,36 +28,6 @@ export class Grid extends React.Component {
                 console.log(name + " is deselected!")
             }
         }
-      /*
-    var images = [
-      {
-        keyword: "Cat",
-        imglist: [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJVYJ3rT9KVeyvWltTFmfpv8C0CkhlQIQ4A&usqp=CAU",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zpMzK7G6HwXUPNRU-BA03jx_1oC4Gl0NUg&usqp=CAU",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5woNyRoVaXNN_8rTxh9bmEGa0QxUCHqVsmg&usqp=CAU",
-        ],
-      },
-
-      {
-        keyword: "Pizza",
-        imglist: [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz-eJmvQnM5YyC8UwvvIr56hMyQr0Wa6vppA&usqp=CAU",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyuIjca1eL6dRRtFlrrV-4JSOZzDVEzuqK7g&usqp=CAU",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfs32OMWj9HaCk9mrdlbvYTWt0yCKWGP4EnQ&usqp=CAU",
-        ],
-      },
-
-      {
-        keyword: "Car",
-        imglist: [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQci4ViVbKJW1HbRq0H9BlZEYdTqSUcFeSkQA&usqp=CAU",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBSI6p-YvPu4Sy_J-h_WfqcHudtYMr_pGoQ&usqp=CAU",
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYPvuyoxmr7oLHJzLhsioZXqmRI2G_F5WOXQ&usqp=CAU",
-        ],
-      },
-      ]
-      */
 
         var images = [
             {
@@ -102,58 +72,46 @@ export class Grid extends React.Component {
                 ]
             }
         ];
-            /*
-        function randkeyNum() {
-            var keyNum = Math.floor(Math.random() * 3)
-            return keyNum
-        }
 
-        function randimgNum() {
-            var imgNum = Math.floor(Math.random() * 3)
-            return imgNum
-        }
-        */
         var keyHasBeenChosen = false
         var primeKey //Array number of the chosen key
         var totalChosen = 0 //number of images from chosen key that have already been returned/selected
         function randomImg() {
-            if (keyHasBeenChosen === false) {
+            if (keyHasBeenChosen === false) { //This finds the key array number corresponding to the key name
                 for (let i = 0; i < images.length; i++) {
                     if (chosenKey === images[i].keyword) {
                         images[i].selectedKeyword = true
                         primeKey = i
                         keyHasBeenChosen = true;
-                        console.log("keyHasBeenChosen = " + images[i].keyword)
                     }
                 }
             }
             var keyOrNot = Math.floor(Math.random() * 2) //will the next image be a chosen key or not a chosen key
-            if (keyOrNot == 0) {
+            if (keyOrNot == 0) { //if 0, then the image will be from the chosen key, unless there's 3 images already being displayed 
                 if (totalChosen < 3) {
                     var imgNum = Math.floor(Math.random() * images[primeKey].imglist.length)
-                    if (images[primeKey].selected[imgNum] === false) {
+                    if (images[primeKey].selected[imgNum] === false) { //returns image if it has not been displayed yet
                         totalChosen++
-                        console.log("totalChosen = " + totalChosen)
                         images[primeKey].selected[imgNum] = true
                         return images[primeKey].imglist[imgNum]
                     }
                 }
-                else {
+                else {  //returns image that is not key image
                     var keyNum = Math.floor(Math.random() * images.length)
-                    if (keyNum === primeKey) {
+                    if (keyNum === primeKey) {  //This prevents a key image from being displayed
                         while (keyNum === primeKey) {
                             keyNum = Math.floor(Math.random() * images.length)
                         }
                     }
                     var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
 
-                    if (images[keyNum].selected[imgNum] === false) {
+                    if (images[keyNum].selected[imgNum] === false) { //returns image if it has not been displayed yet
                         images[keyNum].selected[imgNum] = true
                         return images[keyNum].imglist[imgNum]
                     }
                 }
             }
-            else {
+            else { //returns image that is not key image    [ I know, it redundant, but I'm tired :'(  ]
                 var keyNum = Math.floor(Math.random() * images.length)
                 if (keyNum === primeKey) {
                     while (keyNum === primeKey) {
@@ -162,7 +120,7 @@ export class Grid extends React.Component {
                 }
                 var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
 
-                if (images[keyNum].selected[imgNum] === false) {
+                if (images[keyNum].selected[imgNum] === false) {   //returns image if it has not been displayed yet
                     images[keyNum].selected[imgNum] = true
                     return images[keyNum].imglist[imgNum]
                 }
