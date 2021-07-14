@@ -7,7 +7,6 @@ import ImgList from "./ImgList.js"
 function ImageVerify(props, images) {
   var keys = ["Cat", "Pizza", "Car"]
   var randKey = keys[Math.floor(Math.random() * keys.length)]
-
   return props.trigger ? (
     <div className="popup">
       <div className="popupInner">
@@ -23,7 +22,8 @@ function ImageVerify(props, images) {
         </div>
         {props.children}
         <div>
-          <Grid />
+          {/* here we are passing the random key that was selected for comparison later on */}
+          <Grid randKey={randKey.toString()} />
         </div>
         <div className="footer">
           <div className="refresh">
