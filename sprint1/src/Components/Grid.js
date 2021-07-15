@@ -72,13 +72,58 @@ export class Grid extends React.Component {
                 ]
             }
         ];
+        var imageSequence = [false, false, false, false, false, false, false, false, false] // represents the sequence of random images versus images corresponding to the chosen key
+        var keyImageCount = 0 //cannot be >3
+        var sequenceGenerated = false; // to make sure getSequence() only runs once
+        function getSequence() { //changes 3 random values of imageSelect array to TRUE. The 
+            while (keyImageCount < 3) {
+                var sequenceNum = Math.floor(Math.random() * imageSequence.length)
+                if (imageSequence[sequenceNum] === false) {
+                    imageSequence[sequenceNum] = true;
+                    keyImageCount++
+                }
+            }
+        }
+
+
+        function getRandomImg(_primeKey) { //gets random image NOT associated with chosen key
+            var keyNum = Math.floor(Math.random() * images.length)
+            if (keyNum === _primeKey) {
+                while (keyNum === _primeKey) {
+                    keyNum = Math.floor(Math.random() * images.length)
+                }
+            }
+            var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
+
+            if (images[keyNum].selected[imgNum] === false) {   //returns image if it has not been displayed yet
+                images[keyNum].selected[imgNum] = true
+                return images[keyNum].imglist[imgNum]
+            }
+
+            return getRandomImg(_primeKey)
+        }
+
+
+
+        function getKeyImage(_primeKey) { //gets random image associated with chosen key
+            var imgNum = Math.floor(Math.random() * images[_primeKey].imglist.length)
+
+            if (images[_primeKey].selected[imgNum] === false) { //returns image if it has not been displayed yet
+                images[_primeKey].selected[imgNum] = true
+                return images[_primeKey].imglist[imgNum]
+            }
+
+            return getKeyImage(_primeKey)
+        }
+
+
 
         var keyHasBeenChosen = false
         var primeKey //Array number of the chosen key
-        var totalChosen = 0 //number of images from chosen key that have already been returned/selected
-        function randomImg() {
-            if (keyHasBeenChosen === false) { //This finds the key array number corresponding to the key name
-                for (let i = 0; i < images.length; i++) {
+        function randomImg(_gridNum) {
+
+            if (keyHasBeenChosen === false) { //gets element number from images array associated with chosen key
+                for (let i = 0; i < images.length; i++) { 
                     if (chosenKey === images[i].keyword) {
                         images[i].selectedKeyword = true
                         primeKey = i
@@ -86,47 +131,16 @@ export class Grid extends React.Component {
                     }
                 }
             }
-            var keyOrNot = Math.floor(Math.random() * 2) //will the next image be a chosen key or not a chosen key
-            if (keyOrNot == 0) { //if 0, then the image will be from the chosen key, unless there's 3 images already being displayed 
-                if (totalChosen < 3) {
-                    var imgNum = Math.floor(Math.random() * images[primeKey].imglist.length)
-                    if (images[primeKey].selected[imgNum] === false) { //returns image if it has not been displayed yet
-                        totalChosen++
-                        images[primeKey].selected[imgNum] = true
-                        return images[primeKey].imglist[imgNum]
-                    }
-                }
-                else {  //returns image that is not key image
-                    var keyNum = Math.floor(Math.random() * images.length)
-                    if (keyNum === primeKey) {  //This prevents a key image from being displayed
-                        while (keyNum === primeKey) {
-                            keyNum = Math.floor(Math.random() * images.length)
-                        }
-                    }
-                    var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
 
-                    if (images[keyNum].selected[imgNum] === false) { //returns image if it has not been displayed yet
-                        images[keyNum].selected[imgNum] = true
-                        return images[keyNum].imglist[imgNum]
-                    }
-                }
-            }
-            else { //returns image that is not key image    [ I know, it redundant, but I'm tired :'(  ]
-                var keyNum = Math.floor(Math.random() * images.length)
-                if (keyNum === primeKey) {
-                    while (keyNum === primeKey) {
-                        keyNum = Math.floor(Math.random() * images.length)
-                    }
-                }
-                var imgNum = Math.floor(Math.random() * images[keyNum].imglist.length)
-
-                if (images[keyNum].selected[imgNum] === false) {   //returns image if it has not been displayed yet
-                    images[keyNum].selected[imgNum] = true
-                    return images[keyNum].imglist[imgNum]
-                }
+            if (sequenceGenerated === false) {
+                getSequence()
+                sequenceGenerated = true
             }
 
-            return randomImg()
+            if (imageSequence[_gridNum] === true) {
+                return getKeyImage(primeKey)
+            }
+            return getRandomImg(primeKey)
         }
         return (
 
@@ -154,7 +168,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(0)}
             alt="logo"
           />
         </div>
@@ -170,7 +184,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(1)}
             alt="logo"
           />
         </div>
@@ -186,7 +200,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(2)}
             alt="logo"
           />
         </div>
@@ -202,7 +216,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(3)}
             alt="logo"
           />
         </div>
@@ -218,7 +232,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(4)}
             alt="logo"
           />
         </div>
@@ -234,7 +248,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(5)}
             alt="logo"
           />
         </div>
@@ -250,7 +264,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(6)}
             alt="logo"
           />
         </div>
@@ -266,7 +280,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(7)}
             alt="logo"
           />
         </div>
@@ -282,7 +296,7 @@ export class Grid extends React.Component {
           <img
             style={imgs}
             className="imgs"
-                    src={randomImg()}
+                    src={randomImg(8)}
             alt="logo"
           />
         </div>
