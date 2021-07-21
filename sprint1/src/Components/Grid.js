@@ -1,7 +1,10 @@
 import React from "react"
 
+  let imageSequence;
+  let userImageSequence;
 //function to set up grid
 export class Grid extends React.Component {
+
     render() {
         var chosenKey = this.props.randKey
         const square = {
@@ -22,9 +25,13 @@ export class Grid extends React.Component {
             var { name, checked } = e.target
             //  only applies to the first top left checkbox: when checked output 'is selected', when unchecked output 'is deselected'
             if (checked) {
-                console.log(images.keyword === 0)
+
+                userImageSequence[name.toString()-1] = true;
+                console.log(userImageSequence.toString())
+                console.log(imageSequence.toString())
                 console.log(name + " is selected")
             } else {
+              userImageSequence[name.toString()-1] = false;
                 console.log(name + " is deselected!")
             }
         }
@@ -72,7 +79,8 @@ export class Grid extends React.Component {
                 ]
             }
         ];
-        var imageSequence = [false, false, false, false, false, false, false, false, false] // represents the sequence of random images versus images corresponding to the chosen key
+        imageSequence = [false, false, false, false, false, false, false, false, false] // represents the sequence of random images versus images corresponding to the chosen key
+        userImageSequence = [false, false, false, false, false, false, false, false, false] //a holder for the user's inputs
         var keyImageCount = 0 //cannot be >3
         var sequenceGenerated = false; // to make sure getSequence() only runs once
         function getSequence() { //changes 3 random values of imageSelect array to TRUE. The 
@@ -83,7 +91,9 @@ export class Grid extends React.Component {
                     keyImageCount++
                 }
             }
+          return ({imageSequence})
         }
+      
 
 
         function getRandomImg(_primeKey) { //gets random image NOT associated with chosen key
@@ -158,9 +168,9 @@ export class Grid extends React.Component {
         <div /*onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //onChange={checkclick}
-            // checked={checked}
-            onClick={checkclick}
+            onChange={checkclick}
+            //checked={checked}
+            //onClick={checkclick}
             name="1"
             className="checkIMG"
             id="myCheckbox1"
@@ -175,8 +185,8 @@ export class Grid extends React.Component {
         <div /*onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="2"
             className="checkIMG"
             id="myCheckbox2"
@@ -191,8 +201,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="3"
             className="checkIMG"
             id="myCheckbox3"
@@ -207,8 +217,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="4"
             className="checkIMG"
             id="myCheckbox4"
@@ -223,8 +233,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="5"
             className="checkIMG"
             id="myCheckbox5"
@@ -239,8 +249,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="6"
             className="checkIMG"
             id="myCheckbox6"
@@ -255,8 +265,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="7"
             className="checkIMG"
             id="myCheckbox7"
@@ -271,8 +281,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="8"
             className="checkIMG"
             id="myCheckbox8"
@@ -287,8 +297,8 @@ export class Grid extends React.Component {
         <div /* onClick={}*/ style={square}>
           <input
             type="checkbox"
-            //  onChange={checkclick}
-            // checked={checked}
+            onChange={checkclick}
+            //checked={checked}
             name="9"
             className="checkIMG"
             id="myCheckbox9"
@@ -304,4 +314,5 @@ export class Grid extends React.Component {
     )
   }
 }
+export { userImageSequence}
 export default Grid

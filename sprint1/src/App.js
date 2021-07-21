@@ -6,6 +6,7 @@ import "./css/checkbox.css"
 import "bootstrap/dist/css/bootstrap.css"
 import { Button, Form, FormGroup } from "react-bootstrap"
 
+
 function App() {
   const [buttonPopup, setButtonPopup] = useState(false)
 
@@ -27,7 +28,7 @@ function App() {
           <br />
           <FormGroup controlId="formPassword">
             <Form.Label>Password</Form.Label>{" "}
-            <Form.Control type="password" placeholder="Password"></Form.Control>
+            <Form.Control type="password"  placeholder="Password"></Form.Control>
             <Form.Text>Feel safe logging in using our secure forms.</Form.Text>
           </FormGroup>
         </Form>
@@ -36,6 +37,7 @@ function App() {
           variant="secondary"
           type="submit"
           onClick={() => setButtonPopup(true)}
+         
         >
           {" "}
           Login
@@ -44,10 +46,11 @@ function App() {
 
       <ImageVerify
         trigger={buttonPopup}
-        setTrigger={setButtonPopup}
+        //setTrigger={setButtonPopup}
       ></ImageVerify>
     </div>
   )
 }
+
 
 export default App

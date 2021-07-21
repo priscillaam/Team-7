@@ -1,10 +1,14 @@
 import React from "react"
+import { useState } from "react"
 import "./ImageVerify.css"
 import Grid from "./Grid.js"
 import { Button } from "react-bootstrap"
 import ImgList from "./ImgList.js"
+import login from "./Login"
+import checkBox from "./Check.js"
 
 function ImageVerify(props, images) {
+  const [buttonPopup, setButtonPopup] = useState(false)
   var keys = ["Cat", "Pizza", "Car"]
   var randKey = keys[Math.floor(Math.random() * keys.length)]
   return props.trigger ? (
@@ -27,10 +31,15 @@ function ImageVerify(props, images) {
         </div>
         <div className="footer">
           <div className="refresh">
-            <Button>Refresh</Button>
+            <Button onClick={() => setButtonPopup(true)}>Refresh</Button>
+          
+            <ImageVerify
+              trigger={buttonPopup}
+              setTrigger={setButtonPopup}
+          ></ImageVerify>
           </div>
           <div className="verify">
-            <Button>Verify</Button>
+            <Button onClick={() =>checkBox()}>Verify</Button>
           </div>
         </div>
       </div>
