@@ -1,7 +1,7 @@
 import React from "react"
 
-  let imageSequence;
-  let userImageSequence;
+var imageSequence2;
+let userImageSequence;
 //function to set up grid
 export class Grid extends React.Component {
 
@@ -26,12 +26,13 @@ export class Grid extends React.Component {
             //  only applies to the first top left checkbox: when checked output 'is selected', when unchecked output 'is deselected'
             if (checked) {
 
-                userImageSequence[name.toString()-1] = true;
+                userImageSequence[name.toString()-1] = true; //this changes the values to true when the user clicks the box
+                imageSequence2 = imageSequence.toString();
                 console.log(userImageSequence.toString())
                 console.log(imageSequence.toString())
                 console.log(name + " is selected")
             } else {
-              userImageSequence[name.toString()-1] = false;
+              userImageSequence[name.toString()-1] = false; //this changes the values to false when the user unchecks the box
                 console.log(name + " is deselected!")
             }
         }
@@ -79,7 +80,7 @@ export class Grid extends React.Component {
                 ]
             }
         ];
-        imageSequence = [false, false, false, false, false, false, false, false, false] // represents the sequence of random images versus images corresponding to the chosen key
+        var imageSequence = [false, false, false, false, false, false, false, false, false] // represents the sequence of random images versus images corresponding to the chosen key
         userImageSequence = [false, false, false, false, false, false, false, false, false] //a holder for the user's inputs
         var keyImageCount = 0 //cannot be >3
         var sequenceGenerated = false; // to make sure getSequence() only runs once
@@ -91,7 +92,7 @@ export class Grid extends React.Component {
                     keyImageCount++
                 }
             }
-          return ({imageSequence})
+            
         }
       
 
@@ -152,6 +153,7 @@ export class Grid extends React.Component {
             }
             return getRandomImg(primeKey)
         }
+        
         return (
 
       //adding inline style/css to make the grid columns, rows, and cell sizes
@@ -312,7 +314,9 @@ export class Grid extends React.Component {
         </div>
       </div>
     )
+    
   }
 }
-export { userImageSequence}
+export {userImageSequence}
+export {imageSequence2}
 export default Grid
