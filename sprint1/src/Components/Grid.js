@@ -317,6 +317,8 @@ export class Grid extends React.Component {
     
   }
 }
+
 export {userImageSequence}
 export {imageSequence2}
 export default Grid
+
