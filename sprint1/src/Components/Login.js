@@ -1,5 +1,5 @@
 import "../App"
-
+import react from 'react'
 //nested switch statements to check username and corresponding password
 //need to add if statement for each case if captcha is correct or login in correct
 function login() {
@@ -16,6 +16,7 @@ function login() {
                     break;
                 default:
                     alert("Incorrect Password");
+                    window.location.reload();
                     break;
             }
             break;
@@ -27,6 +28,7 @@ function login() {
                     break;
                     default:
                         alert("Incorrect Password");
+                        window.location.reload();
                         break;
                 }
         break;
@@ -38,14 +40,18 @@ function login() {
                     break;
                 default:
                     alert("Incorrect Password");
+                    window.location.reload();
                     break;
             }
             break;
         default:
             alert("The username does not exist");
+            window.location.reload();
             break;
     }
-    
+     
   }
+
+
 
   export default login

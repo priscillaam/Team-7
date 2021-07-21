@@ -2,6 +2,7 @@ import React from "react"
 import login from "./Login";
 import {userImageSequence} from "./Grid.js"
 import {imageSequence2} from "./Grid"
+import refreshPage from "./Login"
 
 
 
@@ -17,6 +18,7 @@ function checkBox() {
         console.log(imageSequence2.toString());
         console.log(userImageSequence.toString());
         alert("Captcah Incorrect");
+        window.location.reload();
         
     }
 }
