@@ -1,26 +1,23 @@
 import React from "react"
-import login from "./Login";
-import {userImageSequence} from "./Grid.js"
-import {imageSequence2} from "./Grid"
+import login from "./Login"
+import { userImageSequence } from "./Grid.js"
+import { imageSequence2 } from "./Grid"
 import refreshPage from "./Login"
 
-
-
 function checkBox() {
-    //compares userImagesSequence to imageSequence
-    //calls login after if captcha is correct
-    if (userImageSequence.toString() === imageSequence2.toString()) {
-        console.log(imageSequence2.toString());
-        alert("Captcha Correct");
-        login();
-    }
-    if (userImageSequence.toString() !== imageSequence2.toString()) {
-        console.log(imageSequence2.toString());
-        console.log(userImageSequence.toString());
-        alert("Captcah Incorrect");
-        window.location.reload();
-        
-    }
+  //compares userImagesSequence to imageSequence
+  //calls login after if captcha is correct
+  if (userImageSequence.toString() === imageSequence2.toString()) {
+    console.log(imageSequence2.toString())
+    alert("Captcha Correct")
+    login()
+  }
+  if (userImageSequence.toString() !== imageSequence2.toString()) {
+    console.log(imageSequence2.toString())
+    console.log(userImageSequence.toString())
+    alert("Captcah Incorrect")
+    window.location.reload()
+  }
 }
 
 export default checkBox

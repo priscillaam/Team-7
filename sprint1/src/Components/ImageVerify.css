@@ -32,10 +32,10 @@
 }
 .footer {
   position: absolute;
-  border-top: .01em solid grey;
+  border-top: 0.01em solid grey;
   bottom: 0;
   width: 399px;
-  height: 85px
+  height: 85px;
 }
 .refresh {
   height: 85px;

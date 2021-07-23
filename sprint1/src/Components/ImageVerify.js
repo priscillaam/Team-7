@@ -32,14 +32,13 @@ function ImageVerify(props, images) {
         <div className="footer">
           <div className="refresh">
             <Button onClick={() => setButtonPopup(true)}>Refresh</Button>
-          
             <ImageVerify
               trigger={buttonPopup}
               setTrigger={setButtonPopup}
-          ></ImageVerify>
+            ></ImageVerify>
           </div>
           <div className="verify">
-            <Button onClick={() =>checkBox()}>Verify</Button>
+            <Button onClick={() => checkBox()}>Verify</Button>
           </div>
         </div>
       </div>
