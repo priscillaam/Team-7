@@ -1,6 +1,6 @@
 /* colors : light blue - #b6d6d2; sea blue - #45a29e; dark blue - #2b4251 */
 body {
-  background: #f5f5f5;
+  background: #fefefa;
 }
 /* background banner images for individual pages */
 .homeB {
@@ -131,8 +131,8 @@ h2 {
   box-shadow: 0 7px 16px -2px rgba(0, 0, 0, 0.3);
   background-image: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
     ),
     url("./contain2.jpg");
   background-size: 100%;
@@ -155,22 +155,4 @@ h2 {
   font-size: 1.5em;
   font-weight: 100;
   color: white;
-}
-
-/* buttons/ linked "button"  */
-
-/* home page */
-.containerButton {
-  color: white;
-  border: none;
-  background-color: #2b4251;
-  text-align: center;
-  cursor: pointer;
-  padding: 12px 25px;
-  width: 10em;
-  height: 4em;
-  font-family: sans-serif;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  border-radius: 15px 15px 15px 15px;
 }
