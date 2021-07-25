@@ -1,5 +1,5 @@
 import "../App"
-import react from "react"
+
 //nested switch statements to check username and corresponding password
 //need to add if statement for each case if captcha is correct or login in correct
 function login() {

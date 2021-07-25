@@ -1,8 +1,6 @@
-import React from "react"
 import login from "./Login"
 import { userImageSequence } from "./Grid.js"
 import { imageSequence2 } from "./Grid"
-import refreshPage from "./Login"
 
 function checkBox() {
   //compares userImagesSequence to imageSequence

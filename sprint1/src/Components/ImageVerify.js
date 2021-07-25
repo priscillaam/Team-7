@@ -3,8 +3,6 @@ import { useState } from "react"
 import "./ImageVerify.css"
 import Grid from "./Grid.js"
 import { Button } from "react-bootstrap"
-import ImgList from "./ImgList.js"
-import login from "./Login"
 import checkBox from "./Check.js"
 
 function ImageVerify(props, images) {
