@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState} from "react"
 import "./Components/ImageVerify.css"
 import ImageVerify from "./Components/ImageVerify.js"
 // import { useImage } from 'react-image'
 import "./css/checkbox.css"
 import "bootstrap/dist/css/bootstrap.css"
-import { Button, Form, FormGroup } from "react-bootstrap"
-
+import { Button, Form, FormGroup, Nav, Navbar, NavDropdown } from "react-bootstrap"
+import logo from './logo.png'
 function App() {
   const [buttonPopup, setButtonPopup] = useState(false)
 
@@ -22,6 +22,26 @@ function App() {
   }
   return (
     <div>
+      <Navbar bg="light" variant="light" fixed="top" expand="lg">
+          {/* Container specific for logos - can add child components */}
+          <Navbar.Brand>
+            <img src={logo} width="40px" height="40px" alt="logo" /> Logo
+          </Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav>
+              <Nav.Link href="">Blog</Nav.Link>
+              <Nav.Link href="">About</Nav.Link>
+              <Nav.Link href="">Store</Nav.Link>
+              <NavDropdown title="Contact Us">
+                <NavDropdown.Item href="">Example 1</NavDropdown.Item>
+                <NavDropdown.Item href="">Example 2</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="">Example 3</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       <main>
         <div class="background"></div>
         <div style={div}>

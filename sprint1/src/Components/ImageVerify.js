@@ -19,7 +19,8 @@ function ImageVerify(props, images) {
           x
         </button>
         <div className="header">
-          <h3>Select all Images with</h3>
+          
+        <h3>Select all Images with</h3>
           <p>{randKey}</p>
         </div>
         {props.children}
