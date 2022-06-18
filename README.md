@@ -1,2 +1,4 @@
 # Team-7
-Software Engineering Group Project
+CSC 4350 Software Engineering Project Implementation of CAPTCHA Authentication 
+
+Team Members: Romario Medeiros, Rick Kim, Walter Pompa, Priscilla Martinez, Shuang Li, Choaqun Li
